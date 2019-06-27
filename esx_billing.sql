@@ -1,13 +1,16 @@
 USE `essentialmode`;
 
-CREATE TABLE `billing` (
-	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`identifier` varchar(255) NOT NULL,
-	`sender` varchar(255) NOT NULL,
-	`target_type` varchar(50) NOT NULL,
-	`target` varchar(255) NOT NULL,
-	`label` varchar(255) NOT NULL,
-	`amount` int(11) NOT NULL,
-
-	PRIMARY KEY (`id`)
+create table billing
+(
+	id int auto_increment
+		primary key,
+	identifier varchar(255) not null,
+	sender varchar(255) not null,
+	target_type varchar(50) not null,
+	target varchar(255) not null,
+	label varchar(255) not null,
+	amount int not null,
+	split tinyint(1) default 0 not null,
+	paid tinyint(1) default 0 not null
 );
+
